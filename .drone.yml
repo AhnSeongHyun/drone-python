@@ -23,7 +23,7 @@ type: docker
 name: CD
 
 steps:
-- name: build & publish
+- name: build
   image: plugins/docker
   settings:
     username:
