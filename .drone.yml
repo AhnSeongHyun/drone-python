@@ -16,6 +16,7 @@ steps:
     - pip install -U pip
     - pip install -r requirements-dev.txt
     - make check
+
 ---
 kind: pipeline
 type: docker
@@ -33,4 +34,6 @@ steps:
     dockerfile: Dockerfile
     tags:
       - ${DRONE_COMMIT_SHA}
-
+  when:
+    branch:
+      - master
