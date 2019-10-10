@@ -6,7 +6,7 @@ RUN pip install -U pip
 # Build Stage
 FROM base AS build
 
-RUN apt-get update && apt-get install -y build-essential gcc
+# RUN apt-get update && apt-get install -y build-essential gcc
 
 WORKDIR /wheels
 COPY requirements.txt .
@@ -29,4 +29,4 @@ WORKDIR /app
 COPY app app
 
 ENTRYPOINT ["python"]
-CMD ["-m", "app"] 
+CMD ["-m", "app"]
