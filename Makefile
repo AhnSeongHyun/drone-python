@@ -11,3 +11,7 @@ requirements:
 	pipenv lock --pre
 	pipenv lock -r > requirements.txt
 	pipenv lock --dev -r > requirements-dev.txt
+
+format:
+	isort -rc -y ./utils.py tests
+	black -S -l 79 ./utils.py tests
