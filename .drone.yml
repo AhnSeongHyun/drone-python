@@ -25,8 +25,10 @@ steps:
 - name: build & publish
   image: plugins/docker
   settings:
-    username: ash84
-    password: ash8467501!
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PASSWORD
     repo: ash84/drone-python
     dockerfile: Dockerfile
 
