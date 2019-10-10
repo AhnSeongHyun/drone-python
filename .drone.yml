@@ -1,11 +1,18 @@
 kind: pipeline
 type: docker
-name: default
+name: CI
 
 steps:
-- name: build
-  image: python:3.7
+- name: unittest
+  image: python:3.7.3-slim-stretch
   commands:
-  - pip install -U pip
-  - pip install -r requirements-dev.txt
-  - make test
+    - pip install -U pip
+    - pip install -r requirements-dev.txt
+    - make test
+
+- name: lint
+  image: python:3.7.3-slim-stretch
+  commands:
+    - pip install -U pip
+    - pip install -r requirements-dev.txt
+    - make check
