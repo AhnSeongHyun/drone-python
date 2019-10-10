@@ -16,3 +16,17 @@ steps:
     - pip install -U pip
     - pip install -r requirements-dev.txt
     - make check
+---
+kind: pipeline
+type: docker
+name: CD
+
+steps:
+- name: build & publish
+  image: plugins/docker
+  settings:
+    username: ash84
+    password: ash8467501!
+    repo: ash84/drone-python
+    dockerfile: Dockerfile
+
