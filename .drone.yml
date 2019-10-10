@@ -32,7 +32,5 @@ steps:
     repo: ash84/drone-python
     dockerfile: Dockerfile
     tags:
-      - latest
-      - ${DRONE_BUILD_NUMBER}
-      - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA}
+      - ${DRONE_COMMIT_SHA}
 
